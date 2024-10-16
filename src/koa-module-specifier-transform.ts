@@ -73,7 +73,7 @@ const defaultJSParser = (js: string): BabelNode =>
 const defaultJSSerializer = (ast: BabelNode): string =>
     babelSerialize(ast, {
       concise: false,
-      importAttributesKeyword: 'assert',
+      importAttributesKeyword: 'with',
       jsescOption: {
         quotes: 'single',
       },

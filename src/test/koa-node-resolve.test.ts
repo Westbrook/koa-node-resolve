@@ -157,13 +157,13 @@ test('nodeResolve middleware resolves imports with attributes', async (t) => {
         t.equal(
             squeeze((await request(server).get('/modern-syntax.js')).text),
             squeeze(`
-              import styles from './node_modules/x/styles.css' assert { type: 'css' };
+              import styles from './node_modules/x/styles.css' with { type: 'css' };
             `),
             'should transform specifiers in CSS module script, modern syntax');
         t.equal(
             squeeze((await request(server).get('/deprecated-syntax.js')).text),
             squeeze(`
-              import styles from './node_modules/x/styles.css' assert { type: 'css' };
+              import styles from './node_modules/x/styles.css' with { type: 'css' };
             `),
             'should transform specifiers in CSS module script, deprecated syntax');
       });
